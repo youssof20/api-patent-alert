@@ -69,8 +69,8 @@ Automated patent expiration monitoring for IP/Legal SaaS platforms. Integrate in
             "description": "Local development server"
         },
         {
-            "url": "https://api.patentalert.com",
-            "description": "Production server (update when deployed)"
+            "url": "https://api-patent-alert.onrender.com",
+            "description": "Production server (Render)"
         }
     ]
 )
