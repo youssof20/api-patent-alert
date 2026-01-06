@@ -1,0 +1,52 @@
+# FastAPI and server
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+python-multipart==0.0.6
+
+# Database
+sqlalchemy==2.0.25
+alembic==1.13.1
+
+# Data validation
+pydantic==2.5.3
+pydantic-settings==2.1.0
+
+# HTTP client
+httpx==0.26.0
+requests==2.31.0
+
+# Redis for caching
+redis==5.0.1
+hiredis==2.3.2
+
+# AI/ML
+transformers==4.37.2
+# torch is optional - only needed for local model inference
+# Install separately if needed: pip install torch
+# For CPU-only: pip install torch --index-url https://download.pytorch.org/whl/cpu
+sentencepiece==0.1.99
+
+# Admin dashboard
+streamlit==1.31.0
+
+# Billing
+stripe==7.8.0
+
+# Testing
+pytest==7.4.4
+pytest-asyncio==0.23.3
+pytest-cov==4.1.0
+httpx==0.26.0
+
+# Utilities
+python-dotenv==1.0.0
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+slowapi==0.1.9
+
+# Date handling
+python-dateutil==2.8.2
+
+# Monitoring (optional)
+sentry-sdk[fastapi]==2.0.0
+

@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: patent-alert-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: REDIS_URL
+        sync: false
+      - key: USPTO_API_KEY
+        sync: false
+      - key: HF_API_KEY
+        sync: false
+      - key: SECRET_KEY
+        generateValue: true
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_PUBLISHABLE_KEY
+        sync: false
+    healthCheckPath: /health
+
