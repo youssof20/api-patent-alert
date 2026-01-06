@@ -19,12 +19,15 @@ requests==2.31.0
 redis==5.0.1
 hiredis==2.3.2
 
-# AI/ML
-transformers==4.37.2
+# AI/ML (Optional - only needed if using AI features)
+# Uncomment these if you want AI summarization features
+# Note: These require cmake to build, which may not be available in all environments (like Vercel)
+# The app works fine without AI features - they're optional
+# transformers==4.37.2
+# sentencepiece==0.1.99
 # torch is optional - only needed for local model inference
 # Install separately if needed: pip install torch
 # For CPU-only: pip install torch --index-url https://download.pytorch.org/whl/cpu
-sentencepiece==0.1.99
 
 # Admin dashboard
 streamlit==1.31.0
