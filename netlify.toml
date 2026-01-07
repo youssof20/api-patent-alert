@@ -1,8 +1,22 @@
 [build]
   # Tell Netlify this is a static site, not a Python app
   publish = "landing"
-  # No build command needed - just serve static files
-  command = ""
+  # No build command - just serve static files
+  command = "echo 'Static site - no build needed'"
+
+# Explicitly disable Python detection
+[build.environment]
+  PYTHON_VERSION = ""
+
+# Ignore Python files
+[[ignore]]
+  path = "requirements.txt"
+  
+[[ignore]]
+  path = "app"
+  
+[[ignore]]
+  path = "*.py"
 
 [[redirects]]
   # Redirect root to landing page
