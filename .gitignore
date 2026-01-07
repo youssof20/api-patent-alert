@@ -70,3 +70,19 @@ alembic/versions/*.pyc
 # OS
 Thumbs.db
 
+# Sensitive business docs (keep local only)
+SALES_MATERIALS.md
+STRIPE_SETUP_GUIDE.md
+DEPLOY_LANDING_PAGE.md
+README_SALES.md
+*.sales.md
+*sales*.md
+*STRIPE*.md
+*DEPLOY*.md
+
+# Internal docs (move to docs/ but don't push sensitive ones)
+docs/SALES_*.md
+docs/STRIPE_*.md
+docs/DEPLOY_*.md
+docs/README_SALES.md
+
