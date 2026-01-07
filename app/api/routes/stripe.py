@@ -103,11 +103,11 @@ async def create_checkout_session(
             detail="Stripe not configured"
         )
     
-    # Plan pricing
+    # Plan pricing (in cents)
     plan_prices = {
-        "starter": 50000,  # $500 in cents
-        "professional": 200000,  # $2000 in cents
-        "enterprise": 500000  # $5000 in cents
+        "starter": 49900,  # $499/month
+        "professional": 199900,  # $1,999/month
+        "enterprise": 0  # Custom pricing - handled separately
     }
     
     if plan not in plan_prices:

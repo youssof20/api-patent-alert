@@ -31,34 +31,46 @@ app = FastAPI(
 
 Automated patent expiration monitoring for IP/Legal SaaS platforms. Integrate in <1 day.
 
-### Quick Start
+### 🚀 Quick Start
 
-1. **Create API Key**: Use `POST /api/v1/auth/keys` below (no auth required)
+1. **Create API Key**: Use `POST /api/v1/auth/keys` below (no auth required, 14-day free trial)
 2. **Authorize**: Click 🔒 button (top right) and enter your API key
 3. **Test**: Try `/health` first, then `/api/v1/expirations`
 
-### Key Features
+### ✨ Key Features
 
-- Real-time patent expiration alerts
-- AI-powered filtering and summarization
-- Industry-specific queries (biotech, electronics, software, medical, automotive, energy, materials)
-- White-label support (remove API branding)
-- Webhook integration for real-time notifications
+- **Real-time Alerts**: Automated USPTO monitoring with instant webhook notifications
+- **AI-Powered**: Smart filtering by industry (biotech, electronics, software, medical, automotive, energy, materials)
+- **White-Label**: 100% customizable - no branding conflicts
+- **Scalable**: Handle 10K+ queries/day with enterprise reliability
+- **Easy Integration**: RESTful API with comprehensive documentation
+- **Usage Analytics**: Built-in tracking and billing integration
 
-### Pricing Tiers
+### 💰 Pricing Tiers
 
-- **Free Trial**: 14 days, 100 queries/day
-- **Starter**: $500/month, 5,000 queries/month
-- **Professional**: $2,000/month, 25,000 queries/month
-- **Enterprise**: Custom pricing, unlimited queries
+- **Starter**: $499/month - Up to 10,000 queries/month, basic AI filtering
+- **Professional**: $1,999/month - Unlimited queries, advanced AI, priority support
+- **Enterprise**: Custom pricing - Dedicated hosting, SLA guarantees, revenue share options
 
-**Contact**: youssofsallam25@gmail.com
+**All plans include 14-day free trial (no credit card required)**
+
+### 📚 Documentation
+
+- **API Docs**: Interactive Swagger UI below
+- **Integration Guide**: See examples and code snippets
+- **Support**: betterappsstudio@gmail.com
+
+### 🎯 Use Cases
+
+Perfect for IP management platforms, patent analytics SaaS, law firm technology, and legal tech startups.
+
+**Get Started**: Create your free API key below → Start building → Scale with confidence
     """,
     docs_url="/docs",
     redoc_url="/redoc",
     contact={
         "name": "API Support",
-        "email": "youssofsallam25@gmail.com",
+        "email": "betterappsstudio@gmail.com",
     },
     license_info={
         "name": "Proprietary",

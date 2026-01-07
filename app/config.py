@@ -79,7 +79,7 @@ class Settings(BaseSettings):
         """Contact information"""
         return {
             "name": "API Support",
-            "email": "youssoufsallam25@gmail.com"
+            "email": "betterappsstudio@gmail.com"
         }
     
     class Config:

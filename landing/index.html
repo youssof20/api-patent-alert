@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patent Alert API - White-Label Patent Expiration Monitoring</title>
+    <meta name="description" content="Automate patent expiration alerts for your IP/legal SaaS platform. AI-powered, white-label API with easy integration. Free 14-day trial.">
+    <meta name="keywords" content="patent API, patent expiration, IP monitoring, legal tech API, white-label API">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        header p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .cta-secondary {
+            background: white;
+            color: #667eea;
+            margin-left: 15px;
+        }
+        
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #2c3e50;
+        }
+        
+        h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #34495e;
+        }
+        
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .value-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .value-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .use-cases {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        
+        .use-cases ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .use-cases li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .use-cases li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .tiers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .tier {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+        
+        .tier:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+        
+        .tier.featured {
+            border-color: #667eea;
+            border-width: 3px;
+            transform: scale(1.05);
+        }
+        
+        .tier.featured:before {
+            content: "POPULAR";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #667eea;
+            color: white;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        
+        .tier h3 {
+            margin-bottom: 10px;
+        }
+        
+        .price {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+            margin: 20px 0;
+        }
+        
+        .price span {
+            font-size: 0.4em;
+            color: #666;
+        }
+        
+        .tier ul {
+            list-style: none;
+            text-align: left;
+            margin: 30px 0;
+            padding: 0;
+        }
+        
+        .tier li {
+            padding: 10px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .tier li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .trial-badge {
+            background: #28a745;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin: 20px 0;
+            display: inline-block;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .stats {
+            background: #667eea;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            
+            header p {
+                font-size: 1.1em;
+            }
+            
+            .tier.featured {
+                transform: scale(1);
+            }
+            
+            .tiers {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Patent Alert API</h1>
+        <p>White-label API for real-time patent expiration tracking. Empower your legal tech platform with AI-curated alerts.</p>
+        <a href="https://api-patent-alert.onrender.com/docs" class="cta-button">Start Free Trial</a>
+        <a href="#pricing" class="cta-button cta-secondary">View Pricing</a>
+    </header>
+
+    <section id="value-prop">
+        <h2>Why Integrate Patent Alert API?</h2>
+        <div class="value-grid">
+            <div class="value-card">
+                <h3>⚡ Save 50-80% Time</h3>
+                <p>Automate USPTO monitoring—no more manual patent research. Get instant alerts when patents expire in your industry.</p>
+            </div>
+            <div class="value-card">
+                <h3>🤖 AI-Powered Filtering</h3>
+                <p>Smart industry detection (biotech, electronics, software) ensures you only see relevant expirations.</p>
+            </div>
+            <div class="value-card">
+                <h3>🎨 100% White-Label</h3>
+                <p>Seamless integration with zero branding conflicts. Your customers see your product, not ours.</p>
+            </div>
+            <div class="value-card">
+                <h3>🔔 Real-Time Webhooks</h3>
+                <p>Instant notifications via webhooks. Scale to 10K+ queries per day with enterprise reliability.</p>
+            </div>
+            <div class="value-card">
+                <h3>📊 Usage Analytics</h3>
+                <p>Track API usage, costs, and performance. Built-in billing integration with Stripe.</p>
+            </div>
+            <div class="value-card">
+                <h3>🚀 Deploy in Hours</h3>
+                <p>RESTful API with comprehensive docs. Integrate in less than a day, not weeks.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <h2 style="color: white;">Built for Scale</h2>
+        <div class="stats-grid">
+            <div class="stat">
+                <div class="stat-number">99.9%</div>
+                <div class="stat-label">Uptime SLA</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">&lt;500ms</div>
+                <div class="stat-label">Avg Response Time</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">10K+</div>
+                <div class="stat-label">Queries/Day Supported</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Monitoring & Support</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="use-cases">
+        <h2>Perfect For</h2>
+        <div class="use-cases">
+            <ul>
+                <li><strong>IP Management Platforms</strong> - Integrate with Anaqua, Clarivate, or custom IP tools to automate expiration tracking for clients.</li>
+                <li><strong>Patent Analytics SaaS</strong> - Add real-time expiration alerts to your analytics dashboard without building USPTO integrations.</li>
+                <li><strong>Law Firm Technology</strong> - Help legal teams spot generics opportunities and licensing deals before competitors.</li>
+                <li><strong>Legal Tech Startups</strong> - Launch IP monitoring features faster with our white-label API instead of months of development.</li>
+                <li><strong>Enterprise IP Departments</strong> - Monitor patent portfolios across industries with AI-powered filtering and summaries.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="pricing">
+        <h2>Simple, Transparent Pricing</h2>
+        <p style="text-align: center; margin-bottom: 20px; color: #666;">All plans include 14-day free trial. No credit card required.</p>
+        
+        <div class="tiers">
+            <div class="tier">
+                <h3>Starter</h3>
+                <div class="price">$499<span>/mo</span></div>
+                <div class="trial-badge">14-Day Free Trial</div>
+                <ul>
+                    <li>Up to 10,000 queries/month</li>
+                    <li>Basic AI filtering & summaries</li>
+                    <li>Webhook support</li>
+                    <li>Email support</li>
+                    <li>Usage analytics dashboard</li>
+                    <li>White-label branding</li>
+                </ul>
+                <a href="https://api-patent-alert.onrender.com/docs" class="cta-button" style="width: 100%; text-align: center; display: block; margin-top: 20px;">Start Free Trial</a>
+            </div>
+            
+            <div class="tier featured">
+                <h3>Professional</h3>
+                <div class="price">$1,999<span>/mo</span></div>
+                <div class="trial-badge">14-Day Free Trial</div>
+                <ul>
+                    <li>Unlimited queries</li>
+                    <li>Advanced AI summaries</li>
+                    <li>Priority webhook delivery</li>
+                    <li>Priority email support</li>
+                    <li>Advanced analytics</li>
+                    <li>Custom rate limits</li>
+                    <li>Dedicated support channel</li>
+                </ul>
+                <a href="https://api-patent-alert.onrender.com/docs" class="cta-button" style="width: 100%; text-align: center; display: block; margin-top: 20px;">Start Free Trial</a>
+            </div>
+            
+            <div class="tier">
+                <h3>Enterprise</h3>
+                <div class="price">Custom</div>
+                <div class="trial-badge">Custom Trial</div>
+                <ul>
+                    <li>Everything in Professional</li>
+                    <li>Custom integrations</li>
+                    <li>Dedicated hosting options</li>
+                    <li>SLA guarantees</li>
+                    <li>Revenue share options</li>
+                    <li>Custom AI models</li>
+                    <li>24/7 phone support</li>
+                </ul>
+                <a href="mailto:betterappsstudio@gmail.com?subject=Enterprise Inquiry" class="cta-button" style="width: 100%; text-align: center; display: block; margin-top: 20px;">Contact Sales</a>
+            </div>
+        </div>
+        
+        <p style="text-align: center; margin-top: 30px; color: #666;">
+            <strong>Usage-based add-ons:</strong> $0.05 per query over plan limits. Volume discounts available for Enterprise.
+        </p>
+    </section>
+
+    <section id="integration">
+        <h2>Easy Integration</h2>
+        <div style="background: #f8f9fa; padding: 30px; border-radius: 10px; margin-top: 30px;">
+            <h3 style="margin-bottom: 20px;">Get Started in 3 Steps</h3>
+            <ol style="line-height: 2.5; padding-left: 30px;">
+                <li><strong>Create API Key</strong> - Sign up and get your key in seconds (no credit card required)</li>
+                <li><strong>Test Endpoints</strong> - Use our interactive docs to test queries and see real patent data</li>
+                <li><strong>Integrate</strong> - Add our REST API to your platform with webhooks for real-time alerts</li>
+            </ol>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://api-patent-alert.onrender.com/docs" class="cta-button">View API Documentation</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h3 style="color: white; margin-bottom: 20px;">Ready to Get Started?</h3>
+        <p style="margin-bottom: 20px;">Start your free 14-day trial today. No credit card required.</p>
+        <a href="https://api-patent-alert.onrender.com/docs" class="cta-button" style="margin-bottom: 30px;">Start Free Trial</a>
+        <hr style="border: 1px solid #34495e; margin: 30px 0;">
+        <p>Questions? Contact us at <a href="mailto:betterappsstudio@gmail.com">betterappsstudio@gmail.com</a></p>
+        <p style="margin-top: 20px; opacity: 0.8;">© 2024 Patent Alert API. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+

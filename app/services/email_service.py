@@ -11,7 +11,7 @@ from app.config import settings
 logger = logging.getLogger(__name__)
 
 # Fix contact email reference
-CONTACT_EMAIL = "youssoufsallam25@gmail.com"
+CONTACT_EMAIL = "betterappsstudio@gmail.com"
 
 
 class EmailService:
@@ -77,15 +77,15 @@ class EmailService:
             <p><strong>Important:</strong> Save this key securely - it won't be shown again.</p>
             <h3>Quick Start:</h3>
             <ol>
-                <li>Visit <a href="http://localhost:8000/docs">API Documentation</a></li>
+                <li>Visit <a href="https://api-patent-alert.onrender.com/docs">API Documentation</a></li>
                 <li>Click the "Authorize" button (🔒) in the top right</li>
                 <li>Enter your API key and start testing</li>
             </ol>
             <h3>Free Trial:</h3>
             <ul>
-                <li>14 days free trial</li>
-                <li>100 queries per day</li>
+                <li>14 days free trial (no credit card required)</li>
                 <li>Full feature access</li>
+                <li>Pricing: Starter $499/mo | Professional $1,999/mo</li>
             </ul>
             <p>Need help? Contact us at {CONTACT_EMAIL}</p>
             <p>Best regards,<br>Patent Alert API Team</p>
@@ -101,11 +101,12 @@ class EmailService:
         Important: Save this key securely - it won't be shown again.
         
         Quick Start:
-        1. Visit http://localhost:8000/docs
+        1. Visit https://api-patent-alert.onrender.com/docs
         2. Click the "Authorize" button
         3. Enter your API key and start testing
         
-        Free Trial: 14 days, 100 queries/day
+        Free Trial: 14 days (no credit card required)
+        Pricing: Starter $499/mo | Professional $1,999/mo
         
         Need help? Contact us at {CONTACT_EMAIL}
         """
