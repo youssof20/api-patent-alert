@@ -1,0 +1,4 @@
+# Netlify redirects file
+# Redirect root to index.html
+/*    /index.html   200
+

@@ -73,6 +73,9 @@ Thumbs.db
 # Documentation folder (keep local only - never push to GitHub)
 docs/
 
+# Netlify config (can be public)
+# netlify.toml
+
 # Sensitive business docs (keep local only)
 SALES_MATERIALS.md
 STRIPE_SETUP_GUIDE.md

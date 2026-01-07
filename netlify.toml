@@ -1,0 +1,12 @@
+[build]
+  # Tell Netlify this is a static site, not a Python app
+  publish = "landing"
+  # No build command needed - just serve static files
+  command = ""
+
+[[redirects]]
+  # Redirect root to landing page
+  from = "/"
+  to = "/index.html"
+  status = 200
+
